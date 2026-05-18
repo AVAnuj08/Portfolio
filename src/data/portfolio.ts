@@ -1,8 +1,8 @@
-export const portfolioData = {
+﻿export const portfolioData = {
   name: "ANUJ VASHISHT",
   subtitle: "Associate QA Engineer | Automation Testing Specialist",
   about:
-    "QA Engineer with 1.5+ years of experience building reliable manual and automation testing workflows for web, mobile, and SaaS products. Skilled in SDLC/STLC, Selenium WebDriver, Java, TestNG, API and performance testing, with a growing focus on AI-driven QA automation.",
+    "QA Engineer with **1.5+ years of experience** in manual and automation testing for web, mobile, and SaaS products.\n\nI don't just find bugs; I build systems that prevent them from reaching production.\n\nCurrently exploring **AI-driven QA automation** - because the future of quality engineering is smarter and faster.\n\nIf you're building something that needs to *actually work* - let's connect.",
   aboutMe: {
     headline: "I build quality systems that make releases calmer, faster, and easier to trust.",
     intro:

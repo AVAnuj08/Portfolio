@@ -1,7 +1,23 @@
 import { portfolioData } from "../data/portfolio";
 import styles from "./About.module.css";
 
+function renderFormattedText(text: string) {
+  const lines = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  return lines.map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={`b-${index}`}>{part.slice(2, -2)}</strong>;
+    }
+    if (part.startsWith("*") && part.endsWith("*")) {
+      return <em key={`i-${index}`}>{part.slice(1, -1)}</em>;
+    }
+    return <span key={`t-${index}`}>{part}</span>;
+  });
+}
+
 function About() {
+  const aboutIntro = portfolioData.about?.trim() || portfolioData.aboutMe.intro;
+  const aboutParagraphs = aboutIntro.split(/\n+/).map((p) => p.trim()).filter(Boolean);
+
   return (
     <section id="about" className="section">
       <div className="section-title">
@@ -13,7 +29,13 @@ function About() {
         <div className={styles.storyPanel}>
           <p className={styles.eyebrow}>Profile</p>
           <h2 className={styles.headline}>{portfolioData.aboutMe.headline}</h2>
-          <p className={styles.intro}>{portfolioData.aboutMe.intro}</p>
+          <div className={styles.intro}>
+            {aboutParagraphs.map((paragraph, index) => (
+              <p key={`about-intro-${index}`} className={styles.introParagraph}>
+                {renderFormattedText(paragraph)}
+              </p>
+            ))}
+          </div>
 
           <div className={styles.focusList}>
             {portfolioData.aboutMe.focus.map((item) => (

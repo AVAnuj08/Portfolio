@@ -1,6 +1,20 @@
-.hero {
+﻿.hero {
   margin-bottom: 48px;
   animation: slideDown 0.6s ease;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(240px, 460px);
+  gap: 24px;
+  align-items: start;
+}
+
+.heroContent {
+  min-width: 0;
+}
+
+.heroOrbital {
+  justify-self: end;
+  width: 100%;
+  max-width: 460px;
 }
 
 .heroTitle {
@@ -28,6 +42,15 @@
   max-width: 600px;
   line-height: 1.7;
   margin-bottom: 28px;
+  text-align: left;
+}
+
+.heroParagraph {
+  margin: 0 0 12px;
+}
+
+.heroParagraph:last-child {
+  margin-bottom: 0;
 }
 
 .ctaRow {
@@ -94,6 +117,15 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .heroOrbital {
+    justify-self: center;
+  }
+
   .heroTitle {
     font-size: 32px;
   }
