@@ -1,0 +1,58 @@
+.footer {
+  animation: fadeUp 0.75s var(--ease-out) both;
+  text-align: center;
+  padding: 28px 24px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 40px;
+  letter-spacing: 0.04em;
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(0, 229, 255, 0.04) 100%);
+}
+
+.connectTitle {
+  font-family: "Syne", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--heading);
+  letter-spacing: 0.04em;
+}
+
+.connectText {
+  max-width: 720px;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.contactRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contactLink {
+  text-decoration: none;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  border-radius: 8px;
+  padding: 10px 16px;
+  letter-spacing: 0.02em;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s var(--ease-soft);
+}
+
+.contactLink:hover {
+  border-color: var(--accent);
+  background: rgba(0, 229, 255, 0.08);
+  box-shadow: 0 10px 22px rgba(0, 229, 255, 0.08);
+  transform: translateY(-2px);
+}

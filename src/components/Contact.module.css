@@ -1,0 +1,37 @@
+.contactCard {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(0, 229, 255, 0.05) 100%);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 32px;
+  text-align: center;
+}
+
+.contactText {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.contactLinks {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contactLink {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--accent);
+  transition: all 0.2s;
+}
+
+.contactLink:hover {
+  border-color: var(--accent);
+  background: rgba(0, 229, 255, 0.08);
+}

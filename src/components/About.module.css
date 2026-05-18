@@ -1,0 +1,133 @@
+.aboutLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.8fr);
+  gap: 16px;
+}
+
+.storyPanel,
+.snapshotPanel {
+  animation: fadeUp 0.65s var(--ease-out) both;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  transition:
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s var(--ease-soft);
+}
+
+.storyPanel {
+  border-left: 3px solid var(--accent);
+}
+
+.snapshotPanel {
+  animation-delay: 0.08s;
+  border-left: 3px solid var(--green);
+}
+
+.storyPanel:hover,
+.snapshotPanel:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(0, 229, 255, 0.08);
+  transform: translateY(-3px);
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.headline {
+  color: var(--heading);
+  font-family: "Syne", sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.intro {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.focusList {
+  display: grid;
+  gap: 12px;
+}
+
+.focusItem {
+  align-items: flex-start;
+  color: var(--text);
+  display: grid;
+  font-size: 13px;
+  gap: 10px;
+  grid-template-columns: 12px 1fr;
+  line-height: 1.6;
+  transition: transform 0.2s var(--ease-soft);
+}
+
+.focusItem:hover {
+  transform: translateX(3px);
+}
+
+.marker {
+  background: linear-gradient(135deg, var(--accent2), var(--accent));
+  border-radius: 999px;
+  height: 7px;
+  margin-top: 7px;
+  width: 7px;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.focusItem:hover .marker {
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.45);
+  transform: scale(1.35);
+}
+
+.factList {
+  display: grid;
+  gap: 14px;
+}
+
+.factItem {
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  gap: 4px;
+  padding-bottom: 12px;
+}
+
+.factItem:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.factLabel {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.factValue {
+  color: var(--heading);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .aboutLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .headline {
+    font-size: 20px;
+  }
+}
