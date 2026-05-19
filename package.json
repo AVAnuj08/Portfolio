@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "postbuild": "mkdir -p docs && cp -r dist/* docs/",
     "preview": "vite preview",
     "serve": "node server/index.js",
     "start": "npm run build && node server/index.js"
