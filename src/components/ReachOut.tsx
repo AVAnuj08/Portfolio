@@ -1,3 +1,4 @@
+import axios from "axios";
 import { ChangeEvent, FormEvent, useState } from "react";
 import styles from "./ReachOut.module.css";
 
@@ -100,27 +101,7 @@ function ReachOut() {
     setSubmitMessage("Sending your message...");
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
-
-      const responseText = await response.text();
-      let result: { message?: string } = {};
-      if (responseText) {
-        try {
-          result = JSON.parse(responseText) as { message?: string };
-        } catch {
-          result = { message: responseText };
-        }
-      }
-
-      if (!response.ok) {
-        throw new Error(result.message || "Unable to send message right now.");
-      }
+      await axios.post("https://portfolio-backend-delta-jade.vercel.app/contact", values);
 
       setValues({
         fullName: "",
@@ -136,7 +117,10 @@ function ReachOut() {
       setSubmitMessage("Message sent successfully. I will get back to you soon.");
     } catch (error) {
       setSubmitStatus("error");
-      setSubmitMessage(error instanceof Error ? error.message : "Unable to send message right now.");
+      const message = axios.isAxiosError(error)
+        ? (error.response?.data as { message?: string })?.message ?? error.message
+        : "Unable to send message right now.";
+      setSubmitMessage(message);
     }
   };
 
